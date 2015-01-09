@@ -1,0 +1,32 @@
+{
+  "name": "express-bcp47",
+  "version": "1.0.0-pre0",
+  "description": "A middleware to parse language selection inputs",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kraken-js/express-bcp47.git"
+  },
+  "keywords": [
+    "bcp47",
+    "locale",
+    "i18n",
+    "intl"
+  ],
+  "author": "Aria Stewart <ariastewart@paypal.com>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/kraken-js/express-bcp47/issues"
+  },
+  "homepage": "https://github.com/kraken-js/express-bcp47",
+  "dependencies": {
+    "bcp47": "^1.1.0"
+  },
+  "devDependencies": {
+    "express": "^4.10.7",
+    "tape": "^3.0.3"
+  }
+}
