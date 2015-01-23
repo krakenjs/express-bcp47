@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "express": "^4.10.7",
+    "mock-req": "^0.1.0",
+    "mock-res": "^0.2.1",
     "tape": "^3.0.3"
   }
 }
