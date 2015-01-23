@@ -16,6 +16,7 @@ test('test that the middleware uses the supplied header', function (t) {
         t.ok(req.locale);
         t.equal(req.locale.langtag.language.language, 'en');
         t.equal(req.locale.langtag.region, 'US');
+        t.equal(req.locale, res.locals.context.locale);
         t.end();
     });
 });
@@ -27,6 +28,7 @@ test('test that the middleware uses the default if not specified', function (t) 
         t.ok(req.locale);
         t.equal(req.locale.langtag.language.language, 'fr');
         t.equal(req.locale.langtag.region, 'FR');
+        t.equal(req.locale, res.locals.context.locale);
         t.end();
     });
 });
