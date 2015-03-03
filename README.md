@@ -8,7 +8,7 @@ express-bcp47 -- middleware for parsing locale from headers
 
 ## DESCRIPTION
 
-`express-bcp47` is a simple middleware that parses the `Accept-Language` header from the browser and exposes it to handlers under `req.locale` (for handlers) and `res.locals.context.locale` (for the view layer)
+`express-bcp47` is a simple middleware that parses the `Accept-Language` header from the browser and exposes it to handlers under `req.locale` (for handlers) and `res.locals.locale` (for the view layer)
 
 There are two parameters to the options object used in the constructor:
 

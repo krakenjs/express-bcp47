@@ -8,10 +8,8 @@ module.exports = function (options) {
     }
 
     return function handlebcp47(req, res, next) {
-        res.locals.context = res.locals.context || {};
-
-        if (!(res.locals.context.locale = req.locale = bcp47.parse(req.headers['accept-language']))) {
-            res.locals.context.locale = req.locale = bcp47.parse(options.defaultLocale);
+        if (!(res.locals.locale = req.locale = bcp47.parse(req.headers['accept-language']))) {
+            res.locals.locale = req.locale = bcp47.parse(options.defaultLocale);
         }
 
         if (options.vary) {
