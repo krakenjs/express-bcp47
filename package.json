@@ -1,6 +1,6 @@
 {
   "name": "express-bcp47",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A middleware to parse language selection inputs",
   "main": "index.js",
   "scripts": {
