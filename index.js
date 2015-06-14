@@ -16,7 +16,7 @@ module.exports = function (options) {
         var selected = negotiator.languages(options.availableLocales).filter(function (l) {
             debug("trying '%s'", l);
             return bcp47.parse(l);
-        });
+        })[0];
 
         if ((res.locals.locale = req.locale = bcp47.parse(selected))) {
             debug("locale selected from accept-language header is '%s'", selected);
