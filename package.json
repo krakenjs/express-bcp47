@@ -17,7 +17,7 @@
     "intl"
   ],
   "author": "Aria Stewart <ariastewart@paypal.com>",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/kraken-js/express-bcp47/issues"
   },
