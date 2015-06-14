@@ -1,5 +1,7 @@
+"use strict";
 var bcp47 = require('bcp47');
 var debug = require('debuglog')('express-bcp47');
+var Negotiator = require('negotiator');
 
 module.exports = function (options) {
     options = options || {};
@@ -9,9 +11,15 @@ module.exports = function (options) {
     }
 
     return function handlebcp47(req, res, next) {
+        var negotiator = new Negotiator(req);
         debug("trying accept-language header %j", req.headers['accept-language']);
-        if ((res.locals.locale = req.locale = bcp47.parse(req.headers['accept-language']))) {
-            debug("locale selected from accept-language header is '%j'", req.locale);
+        var selected = negotiator.languages(options.availableLocales).filter(function (l) {
+            debug("trying '%s'", l);
+            return bcp47.parse(l);
+        });
+
+        if ((res.locals.locale = req.locale = bcp47.parse(selected))) {
+            debug("locale selected from accept-language header is '%s'", selected);
         } else {
             debug("using default locale '%s'", options.defaultLocale);
             res.locals.locale = req.locale = bcp47.parse(options.defaultLocale);
