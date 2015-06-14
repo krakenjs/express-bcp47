@@ -9,11 +9,12 @@ module.exports = function (options) {
     }
 
     return function handlebcp47(req, res, next) {
+        debug("trying accept-language header %j", req.headers['accept-language']);
         if ((res.locals.locale = req.locale = bcp47.parse(req.headers['accept-language']))) {
-            debug("locale selected from accept-language header is '%s'", req.headers['accept-language']);
+            debug("locale selected from accept-language header is '%j'", req.locale);
         } else {
-            res.locals.locale = req.locale = bcp47.parse(options.defaultLocale);
             debug("using default locale '%s'", options.defaultLocale);
+            res.locals.locale = req.locale = bcp47.parse(options.defaultLocale);
         }
 
         if (options.vary) {
