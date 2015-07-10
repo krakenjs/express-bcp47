@@ -1,7 +1,9 @@
-express-bcp47 -- middleware for parsing locale from headers
-===========================================================
+express-bcp47
+=============
 
 ## SYNOPSIS
+
+middleware for parsing locale from headers
 
     var bcp47mw = require('express-bcp47');
     app.use(bcp47mw({ defaultLocale: "en-US", vary: true }));
