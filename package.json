@@ -30,7 +30,7 @@
   "devDependencies": {
     "express": "^4.10.7",
     "mock-req": "^0.1.0",
-    "mock-res": "^0.2.1",
+    "mock-res": "^0.3.1",
     "tap": "^1.2.0"
   }
 }
